@@ -1,5 +1,8 @@
 #include<iostream>
 #include "LinkedList.h"
+#include "Doubly_LinkedList.h"
+#include "Circular_LinkedList.h"
+#include "Circular_Doubly_LinkedList.h"
 
 using namespace std;
 
