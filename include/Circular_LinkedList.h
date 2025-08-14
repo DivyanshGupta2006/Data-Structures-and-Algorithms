@@ -62,6 +62,8 @@ public:
 
     Node *find(const T &data) const;
 
+    int search(const T &data) const;
+
     void sort();
 
     void merge(const Circular_LinkedList<T> &list);
@@ -285,13 +287,40 @@ typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::find(const T &dat
 }
 
 template<typename T>
+int Circular_LinkedList<T>::search(const T &data) const {
+    if (isEmpty()) {
+        return -1;
+    }
+    int index = 0;
+    if (head->value == data) {
+        return index;
+    }
+    Node *current = head->next;
+    index = 1;
+    while (current != head) {
+        if (current->value == data) {
+            return index;
+        }
+        index++;
+        current = current->next;
+    }
+    if (index == size) {
+        return -1;
+    }
+    return index;
+}
+
+template<typename T>
 typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::findMiddle(Node *h) {
-    if (h == nullptr || h->next == h) {
+    if (h == nullptr || h->next == nullptr) {
         return h;
     }
+
+    // create two pointers to find mid of the list
     Node *slow_ptr = h;
     Node *fast_ptr = h->next;
-    while (fast_ptr != h && fast_ptr->next != h) {
+
+    while (fast_ptr != nullptr && fast_ptr->next != nullptr) {
         slow_ptr = slow_ptr->next;
         fast_ptr = fast_ptr->next->next;
     }
@@ -300,32 +329,33 @@ typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::findMiddle(Node *
 
 template<typename T>
 typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::merge_sort(Node *h) {
-    if (h == nullptr || h->next == h) {
+    if (h == nullptr || h->next == nullptr) {
         return h;
     }
+
+    // find middle
     Node *middle = findMiddle(h);
     Node *mid_next = middle->next;
+
+    // break the list
     middle->next = nullptr;
+
     Node *left = merge_sort(h);
     Node *right = merge_sort(mid_next);
+
     Node *sorted = merge_sorted(left, right);
-    Node *last = sorted;
-    while (last->next != nullptr) {
-        last = last->next;
-    }
-    last->next = sorted;
     return sorted;
 }
 
 template<typename T>
 typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::merge_sorted(Node *a, Node *b) {
+    Node *result = nullptr;
     if (a == nullptr) {
         return b;
     }
     if (b == nullptr) {
         return a;
     }
-    Node *result = nullptr;
     if (a->value <= b->value) {
         result = a;
         result->next = merge_sorted(a->next, b);

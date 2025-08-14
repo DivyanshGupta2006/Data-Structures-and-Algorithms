@@ -72,6 +72,8 @@ public:
     // other functions
     Node *find(const T &data) const;
 
+    int search(const T &data) const;
+
     void sort();
 
     void merge(const LinkedList<T> &list);
@@ -258,6 +260,26 @@ typename LinkedList<T>::Node *LinkedList<T>::find(const T &data) const {
     }
 
     return nullptr;
+}
+
+template<typename T>
+int LinkedList<T>::search(const T &data) const {
+    if (isEmpty()) {
+        return -1;
+    }
+    int index = 0;
+    Node *current = head;
+    while (current != nullptr) {
+        if (current->value == data) {
+            return index;
+        }
+        index++;
+        current = current->next;
+    }
+    if (index == size) {
+        return -1;
+    }
+    return index;
 }
 
 template<typename T>

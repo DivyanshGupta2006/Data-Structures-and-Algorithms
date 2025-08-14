@@ -63,6 +63,8 @@ public:
 
     Node *find(const T &data) const;
 
+    int search(const T &data) const;
+
     void sort();
 
     void merge(const Doubly_LinkedList<T> &list);
@@ -268,12 +270,35 @@ typename Doubly_LinkedList<T>::Node *Doubly_LinkedList<T>::find(const T &data) c
 }
 
 template<typename T>
-typename Doubly_LinkedList<T>::Node *Doubly_LinkedList<T>::findMiddle(Node *h) {
-    if (h == nullptr) {
-        return nullptr;
+int Doubly_LinkedList<T>::search(const T &data) const {
+    if (isEmpty()) {
+        return -1;
     }
+    int index = 0;
+    Node *current = head;
+    while (current != nullptr) {
+        if (current->value == data) {
+            return index;
+        }
+        index++;
+        current = current->next;
+    }
+    if (index == size) {
+        return -1;
+    }
+    return index;
+}
+
+template<typename T>
+typename Doubly_LinkedList<T>::Node *Doubly_LinkedList<T>::findMiddle(Node *h) {
+    if (h == nullptr || h->next == nullptr) {
+        return h;
+    }
+
+    // create two pointers to find mid of the list
     Node *slow_ptr = h;
-    Node *fast_ptr = h;
+    Node *fast_ptr = h->next;
+
     while (fast_ptr != nullptr && fast_ptr->next != nullptr) {
         slow_ptr = slow_ptr->next;
         fast_ptr = fast_ptr->next->next;
@@ -308,18 +333,14 @@ typename Doubly_LinkedList<T>::Node *Doubly_LinkedList<T>::merge_sorted(Node *a,
     Node *result = nullptr;
     if (a->value <= b->value) {
         result = a;
-        Node* next_result = merge_sorted(a->next, b);
-        result->next = next_result;
-        if(next_result != nullptr) {
-            next_result->prev = result;
-        }
+        result->next = merge_sorted(a->next, b);
     } else {
         result = b;
-        Node* next_result = merge_sorted(a, b->next);
-        result->next = next_result;
-        if(next_result != nullptr) {
-            next_result->prev = result;
-        }
+        result->next = merge_sorted(a, b->next);
+    }
+
+    if (result->next != nullptr) {
+        result->next->prev = result;
     }
     return result;
 }

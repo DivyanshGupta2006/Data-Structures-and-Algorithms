@@ -1,4 +1,4 @@
-// Header file containing declarations and definitions of Doubly_LinkedList class and all the associated functions and variables
+// Header file containing declarations and definitions of Circular_Doubly_LinkedList class and all the associated functions and variables
 
 // "include guard" to prevent multiple inclusions in different files that are also included in each other
 #pragma once
@@ -62,6 +62,8 @@ public:
     void delete_element(const T &data);
 
     Node *find(const T &data) const;
+
+    int search(const T &data) const;
 
     void sort();
 
@@ -285,6 +287,30 @@ typename Circular_Doubly_LinkedList<T>::Node *Circular_Doubly_LinkedList<T>::fin
         current = current->next;
     } while (current != head);
     return nullptr;
+}
+
+template<typename T>
+int Circular_Doubly_LinkedList<T>::search(const T &data) const {
+    if (isEmpty()) {
+        return -1;
+    }
+    int index = 0;
+    if (head->value == data) {
+        return index;
+    }
+    Node *current = head->next;
+    index = 1;
+    while (current != head) {
+        if (current->value == data) {
+            return index;
+        }
+        index++;
+        current = current->next;
+    }
+    if (index == size) {
+        return -1;
+    }
+    return index;
 }
 
 template<typename T>

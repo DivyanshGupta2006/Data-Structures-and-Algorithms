@@ -77,7 +77,9 @@ void test_LinkedList() {
     pl("------------------------Checking searching------------------------")
     // search elements present and not present in list
     cout << "The pointer to Node containing '3' is " << list.find(3) << endl;
+    cout << "The index of Node containing '3' is " << list.search(3) << endl;
     cout << "The pointer to Node containing '6' is " << list.find(6) << endl;
+    cout << "The index of Node containing '6' is " << list.search(6) << endl;
 
     // create another list to merge
     LinkedList<int> add;
@@ -192,7 +194,9 @@ void test_Circular_LinkedList() {
     pl("------------------------Checking searching------------------------")
     // search elements present and not present in list
     cout << "The pointer to Node containing '3' is " << list.find(3) << endl;
+    cout << "The index of Node containing '3' is " << list.search(3) << endl;
     cout << "The pointer to Node containing '6' is " << list.find(6) << endl;
+    cout << "The index of Node containing '6' is " << list.search(6) << endl;
 
     // create another list to merge
     Circular_LinkedList<int> add;
@@ -307,7 +311,9 @@ void test_Doubly_LinkedList() {
     pl("------------------------Checking searching------------------------")
     // search elements present and not present in list
     cout << "The pointer to Node containing '3' is " << list.find(3) << endl;
+    cout << "The index of Node containing '3' is " << list.search(3) << endl;
     cout << "The pointer to Node containing '6' is " << list.find(6) << endl;
+    cout << "The index of Node containing '6' is " << list.search(6) << endl;
 
     // create another list to merge
     Doubly_LinkedList<int> add;
@@ -422,7 +428,9 @@ void test_Circular_Doubly_LinkedList() {
     pl("------------------------Checking searching------------------------")
     // search elements present and not present in list
     cout << "The pointer to Node containing '3' is " << list.find(3) << endl;
+    cout << "The index of Node containing '3' is " << list.search(3) << endl;
     cout << "The pointer to Node containing '6' is " << list.find(6) << endl;
+    cout << "The index of Node containing '6' is " << list.search(6) << endl;
 
     // create another list to merge
     Circular_Doubly_LinkedList<int> add;
@@ -471,8 +479,8 @@ void test_Circular_Doubly_LinkedList() {
 int main() {
 
     // test_LinkedList();
-    test_Circular_LinkedList();
-    // test_Doubly_LinkedList();
+    // test_Circular_LinkedList();
+    test_Doubly_LinkedList();
     // test_Circular_Doubly_LinkedList();
     return 0;
 
