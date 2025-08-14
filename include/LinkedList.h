@@ -21,7 +21,7 @@ private:
     size_t size;
 
     // private functions used for merge sort
-    Node *findMiddle(Node* h);
+    Node *findMiddle(Node *h);
 
     Node *merge_sort(Node *h);
 
@@ -261,7 +261,7 @@ typename LinkedList<T>::Node *LinkedList<T>::find(const T &data) const {
 }
 
 template<typename T>
-typename LinkedList<T>::Node *LinkedList<T>::findMiddle(Node* h) {
+typename LinkedList<T>::Node *LinkedList<T>::findMiddle(Node *h) {
     if (h == nullptr || h->next == nullptr) {
         return h;
     }
@@ -298,8 +298,8 @@ typename LinkedList<T>::Node *LinkedList<T>::merge_sort(Node *h) {
 }
 
 template<typename T>
-typename LinkedList<T>::Node * LinkedList<T>::merge_sorted(Node *a, Node *b) {
-    Node* result = nullptr;
+typename LinkedList<T>::Node *LinkedList<T>::merge_sorted(Node *a, Node *b) {
+    Node *result = nullptr;
     if (a == nullptr) {
         return b;
     }
@@ -309,7 +309,7 @@ typename LinkedList<T>::Node * LinkedList<T>::merge_sorted(Node *a, Node *b) {
     if (a->value <= b->value) {
         result = a;
         result->next = merge_sorted(a->next, b);
-    }else {
+    } else {
         result = b;
         result->next = merge_sorted(a, b->next);
     }
