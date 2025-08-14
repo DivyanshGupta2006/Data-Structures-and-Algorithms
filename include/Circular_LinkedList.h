@@ -46,6 +46,8 @@ public:
 
     Node *findMax() const;
 
+    bool isCircular() const;
+
     void insert_begin(const T &data);
 
     void insert_end(const T &data);
@@ -132,6 +134,28 @@ typename Circular_LinkedList<T>::Node *Circular_LinkedList<T>::findMax() const {
     } while (current != head);
     return maxx;
 }
+
+template <typename T>
+bool Circular_LinkedList<T>::isCircular() const {
+    if (head == nullptr) {
+        return false;
+    }
+
+    Node* slow_ptr = head;
+    Node* fast_ptr = head;
+
+    while (fast_ptr != nullptr && fast_ptr->next != nullptr) {
+        slow_ptr = slow_ptr->next;
+        fast_ptr = fast_ptr->next->next;
+
+        if (slow_ptr == fast_ptr) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
 template<typename T>
 void Circular_LinkedList<T>::insert_begin(const T &data) {

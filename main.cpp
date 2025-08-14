@@ -108,6 +108,9 @@ void test_LinkedList() {
     cout << "The min value is " << list.findMin()->value << endl;
     cout << "The max value is " << list.findMax()->value << endl;
 
+    pl("------------------------Checking if the list is circular------------------------")
+    cout << "The list is circular: " << list.isCircular() << endl;
+
     pl("------------------------Checking reversing------------------------")
     // reversing the list
     list.reverse();
@@ -224,6 +227,9 @@ void test_Circular_LinkedList() {
     // finding min and max
     cout << "The min value is " << list.findMin()->value << endl;
     cout << "The max value is " << list.findMax()->value << endl;
+
+    pl("------------------------Checking if the list is circular------------------------")
+    cout << "The list is circular: " << list.isCircular() << endl;
 
     pl("------------------------Checking reversing------------------------")
     // reversing the list
@@ -342,6 +348,9 @@ void test_Doubly_LinkedList() {
     cout << "The min value is " << list.findMin()->value << endl;
     cout << "The max value is " << list.findMax()->value << endl;
 
+    pl("------------------------Checking if the list is circular------------------------")
+    cout << "The list is circular: " << list.isCircular() << endl;
+
     pl("------------------------Checking reversing------------------------")
     // reversing the list
     list.reverse();
@@ -459,6 +468,9 @@ void test_Circular_Doubly_LinkedList() {
     cout << "The min value is " << list.findMin()->value << endl;
     cout << "The max value is " << list.findMax()->value << endl;
 
+    pl("------------------------Checking if the list is circular------------------------")
+    cout << "The list is circular: " << list.isCircular() << endl;
+
     pl("------------------------Checking reversing------------------------")
     // reversing the list
     list.reverse();
@@ -478,9 +490,9 @@ void test_Circular_Doubly_LinkedList() {
 
 int main() {
 
-    // test_LinkedList();
+    test_LinkedList();
     // test_Circular_LinkedList();
-    test_Doubly_LinkedList();
+    // test_Doubly_LinkedList();
     // test_Circular_Doubly_LinkedList();
     return 0;
 
