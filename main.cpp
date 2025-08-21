@@ -563,14 +563,14 @@ void test_LinkedListStack() {
     cout << "Is stack empty? " << (stack.isEmpty() ? "Yes" : "No") << endl;
 }
 
-int main() {
+int mainn() {
 
     // test_LinkedList();
     // test_Circular_LinkedList();
     // test_Doubly_LinkedList();
     // test_Circular_Doubly_LinkedList();
     // test_ArrayStack();
-    test_LinkedListStack();
+    // test_LinkedListStack();
     return 0;
 
 }

@@ -12,28 +12,41 @@ class Stack_Array {
 private:
     T arr[MAX_SIZE];
     int top;
+    size_t size;
 
 public:
     Stack_Array();
-    void push(const T& data);
+
+    size_t getSize() const {
+        return size;
+    }
+
+    void push(const T &data);
+
     T pop();
+
     T peek();
+
     bool isEmpty();
+
     bool isFull();
+
     void display();
 };
 
 template<typename T>
 Stack_Array<T>::Stack_Array() {
     top = -1;
+    size = 0;
 }
 
 template<typename T>
-void Stack_Array<T>::push(const T& data) {
+void Stack_Array<T>::push(const T &data) {
     if (isFull()) {
         throw std::out_of_range("Stack is full.");
     }
     arr[++top] = data;
+    size++;
 }
 
 template<typename T>
@@ -41,6 +54,7 @@ T Stack_Array<T>::pop() {
     if (isEmpty()) {
         throw std::out_of_range("Stack is empty.");
     }
+    size--;
     return arr[top--];
 }
 

@@ -9,22 +9,35 @@ template<typename T>
 class Stack_LinkedList {
 private:
     LinkedList<T> list;
+    size_t size;
 
 public:
     Stack_LinkedList();
-    void push(const T& data);
+
+    void push(const T &data);
+
     T pop();
+
     T peek() const;
+
     bool isEmpty() const;
+
     void display() const;
+
+    size_t getSize() const {
+        return size;
+    }
 };
 
 template<typename T>
-Stack_LinkedList<T>::Stack_LinkedList() {};
+Stack_LinkedList<T>::Stack_LinkedList() {
+    size = 0;
+};
 
 template<typename T>
-void Stack_LinkedList<T>::push(const T& data) {
+void Stack_LinkedList<T>::push(const T &data) {
     list.insert_begin(data);
+    size++;
 }
 
 template<typename T>
@@ -34,6 +47,7 @@ T Stack_LinkedList<T>::pop() {
     }
     T popped_value = list.head->value;
     list.delete_begin();
+    size--;
     return popped_value;
 }
 
