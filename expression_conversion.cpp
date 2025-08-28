@@ -1,6 +1,7 @@
+// This file contains one of the implementation of Stack data structure - Infix, Postfix, and Prefix expressions.
 #include <iostream>
 #include <map>
-#include <stdexcept>
+#include <stdexcept>s
 #include <cmath>
 #include "Stack_LinkedList.h"
 

@@ -4,7 +4,6 @@
 #pragma once
 #include "LinkedList.h"
 #include <stdexcept>
-
 template<typename T>
 class Stack_LinkedList {
 private:

@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
-add_executable(Data_Structure_and_Algorithm main.cpp
-#        test.cpp
-        expression_conversion.cpp
+add_executable(Data_Structure_and_Algorithm
+#        main.cpp
+        test.cpp
 )

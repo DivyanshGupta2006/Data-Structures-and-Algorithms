@@ -4,8 +4,7 @@
 #pragma once
 #include <iostream>
 #include <stdexcept>
-
-const int MAX_SIZE = 100;
+#include "constants.h"
 
 template<typename T>
 class Stack_Array {
