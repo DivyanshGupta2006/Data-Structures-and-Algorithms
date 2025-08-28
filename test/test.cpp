@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 void test_LinkedList();
 
 void test_Circular_LinkedList();
@@ -19,15 +23,25 @@ void test_StackQueue();
 void test_QueueStack();
 
 int main() {
-    // test_LinkedList();
-    test_Circular_LinkedList();
-    test_Doubly_LinkedList();
-    test_Circular_Doubly_LinkedList();
-    test_ArrayStack();
-    test_LinkedListStack();
-    test_ArrayQueue();
-    test_LinkedListQueue();
-    test_QueueStack();
-    test_StackQueue();
+    test_LinkedList();
+    cout << "\n";
+    // test_Circular_LinkedList();
+    // cout << "\n";
+    // test_Doubly_LinkedList();
+    // cout << "\n";
+    // test_Circular_Doubly_LinkedList();
+    // cout << "\n";
+    // test_ArrayStack();
+    // cout << "\n";
+    // test_LinkedListStack();
+    // cout << "\n";
+    // test_ArrayQueue();
+    // cout << "\n";
+    // test_LinkedListQueue();
+    // cout << "\n";
+    // test_QueueStack();
+    // cout << "\n";
+    // test_StackQueue();
+    // cout << "\n";
     return 0;
 }

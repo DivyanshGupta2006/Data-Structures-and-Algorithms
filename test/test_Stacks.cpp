@@ -8,7 +8,7 @@ using namespace std;
 #define pl(a) cout << a << "\n";
 
 void test_ArrayStack() {
-    pl("Testing functionalities of Stack using Linked List")
+    pl("Testing functionalities of Stack using Array List")
 
     // create a new array-based stack object
     Stack_Array<int> stack;
