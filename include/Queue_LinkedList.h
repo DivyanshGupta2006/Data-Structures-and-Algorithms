@@ -1,11 +1,11 @@
 #pragma once
-#include "Circular_Doubly_LinkedList.h"
+#include "LinkedList.h"
 #include <stdexcept>
 
 template<typename T>
 class Queue_LinkedList {
 private:
-    Circular_Doubly_LinkedList<T> list;
+    LinkedList<T> list;
 
 public:
     Queue_LinkedList();
