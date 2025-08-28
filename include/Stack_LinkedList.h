@@ -2,7 +2,7 @@
 
 // "include guard" to prevent multiple inclusions in different files that are also included in each other
 #pragma once
-#include "LinkedList.h"
+#include "Circular_Doubly_LinkedList.h"
 #include <stdexcept>
 template<typename T>
 class Stack_LinkedList {

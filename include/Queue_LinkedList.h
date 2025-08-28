@@ -1,5 +1,5 @@
 #pragma once
-#include "LinkedList.h"
+#include "Circular_Doubly_LinkedList.h"
 #include <stdexcept>
 
 template<typename T>

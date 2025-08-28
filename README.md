@@ -18,4 +18,7 @@ Current implementations include that of -
 ```
 
 
-There are also some cpp files containing applications of various data structures - like test.cpp.
+There is a test directory which contains code for testing functionalities of all the defined data structures and algorithms.
+
+
+There are also some cpp files containing applications of various data structures.
