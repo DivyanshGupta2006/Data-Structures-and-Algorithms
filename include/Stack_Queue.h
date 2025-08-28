@@ -17,6 +17,7 @@ public:
     T pop();
     T peek();
     bool isEmpty();
+    void display();
 };
 
 template<typename T>
@@ -51,3 +52,27 @@ template<typename T>
 bool Stack_Queue<T>::isEmpty() {
     return q1.isEmpty();
 }
+
+template<typename T>
+void Stack_Queue<T>::display() {
+        if (isEmpty()) {
+            std::cout << "Stack is empty." << std::endl;
+            return;
+        }
+
+        // Use a temporary queue for display
+        Queue_LinkedList<T> tempQueue;
+
+        while (!q1.isEmpty()) {
+            T data = q1.dequeue();
+            std::cout << data << " ";
+            tempQueue.enqueue(data);
+        }
+        std::cout << std::endl;
+
+        // Restore the main queue
+        while (!tempQueue.isEmpty()) {
+            q1.enqueue(tempQueue.dequeue());
+        }
+}
+

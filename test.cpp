@@ -7,6 +7,7 @@
 #include "Queue_LinkedList.h"
 #include "Stack_Array.h"
 #include "Stack_LinkedList.h"
+#include "Stack_Queue.h"
 
 using namespace std;
 
@@ -665,7 +666,7 @@ void test_QueueStack() {
     pl("Testing functionalities of Stack using Queue")
 
     // create a new array-based stack object
-    Stack_Array<int> stack;
+    Stack_Queue<int> stack;
 
     pl("------------------------Checking push operation------------------------")
     // push elements onto the stack
@@ -692,10 +693,9 @@ void test_QueueStack() {
     // print stack after peek
     stack.display();
 
-    pl("------------------------Checking isEmpty and isFull------------------------")
+    pl("------------------------Checking isEmpty------------------------")
     // check if the stack is empty and full
     cout << "Is stack empty? " << (stack.isEmpty() ? "Yes" : "No") << endl;
-    cout << "Is stack full? " << (stack.isFull() ? "Yes" : "No") << endl;
 }
 
 void test_StackQueue() {

@@ -7,7 +7,7 @@
 template<typename T>
 class Stack_LinkedList {
 private:
-    LinkedList<T> list;
+    Circular_Doubly_LinkedList<T> list;
     size_t size;
 
 public:

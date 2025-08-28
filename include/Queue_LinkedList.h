@@ -5,7 +5,7 @@
 template<typename T>
 class Queue_LinkedList {
 private:
-    LinkedList<T> list;
+    Circular_Doubly_LinkedList<T> list;
 
 public:
     Queue_LinkedList();
@@ -56,6 +56,5 @@ void Queue_LinkedList<T>::display() {
         std::cout << "Queue is empty." << std::endl;
         return;
     }
-    std::cout << "Queue elements: ";
     list.display();
 }

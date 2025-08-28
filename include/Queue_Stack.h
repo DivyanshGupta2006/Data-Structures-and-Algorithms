@@ -3,13 +3,13 @@
 #include <stdexcept>
 
 template<typename T>
-class QueueUsingStack {
+class Queue_Stack {
 private:
     Stack_LinkedList<T> s1;
     Stack_LinkedList<T> s2;
 
 public:
-    QueueUsingStack();
+    Queue_Stack();
     void enqueue(const T& data);
     T dequeue();
     T peek();
@@ -17,18 +17,19 @@ public:
     size_t getSize() {
         return s1.getSize() + s2.getSize();
     }
+    void display();
 };
 
 template<typename T>
-QueueUsingStack<T>::QueueUsingStack() {}
+Queue_Stack<T>::Queue_Stack() {}
 
 template<typename T>
-void QueueUsingStack<T>::enqueue(const T& data) {
+void Queue_Stack<T>::enqueue(const T& data) {
     s1.push(data);
 }
 
 template<typename T>
-T QueueUsingStack<T>::dequeue() {
+T Queue_Stack<T>::dequeue() {
     if (s1.isEmpty() && s2.isEmpty()) {
         throw std::out_of_range("Queue is empty.");
     }
@@ -41,7 +42,7 @@ T QueueUsingStack<T>::dequeue() {
 }
 
 template<typename T>
-T QueueUsingStack<T>::peek() {
+T Queue_Stack<T>::peek() {
     if (s1.isEmpty() && s2.isEmpty()) {
         throw std::out_of_range("Queue is empty.");
     }
@@ -54,6 +55,35 @@ T QueueUsingStack<T>::peek() {
 }
 
 template<typename T>
-bool QueueUsingStack<T>::isEmpty() {
+bool Queue_Stack<T>::isEmpty() {
     return s1.isEmpty() && s2.isEmpty();
 }
+
+template<typename T>
+void Queue_Stack<T>::display() {
+    if (isEmpty()) {
+        std::cout << "Queue is empty." << std::endl;
+        return;
+    }
+
+    if (s2.isEmpty()) {
+        while (!s1.isEmpty()) {
+            s2.push(s1.pop());
+        }
+    }
+
+    // Print elements from s2, which are now in the correct order
+    Stack_LinkedList<T> tempStack;
+    while (!s2.isEmpty()) {
+        T data = s2.pop();
+        std::cout << data << " ";
+        tempStack.push(data);
+    }
+    std::cout << std::endl;
+
+    // Restore s2
+    while (!tempStack.isEmpty()) {
+        s2.push(tempStack.pop());
+    }
+}
+
