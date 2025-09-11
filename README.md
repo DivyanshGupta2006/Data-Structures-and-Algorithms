@@ -2,7 +2,7 @@
 This project contains implementation of all common Data Structures and Algorithms in C++, along with all the basic functionalities associated with them.
 
 
-Current implementations include that of - 
+Current implementations of data structures include that of - 
 
 ``` 
     -> Linked List
@@ -14,11 +14,26 @@ Current implementations include that of -
     -> Queue using array
     -> Queue using LinkedList
     -> Stack using Queue
-    -> Queue using Stack. 
+    -> Queue using Stack
+    -> Heap
+    -> Doubly-ended Queue
+    -> Priority Queue
+    -> Binary Tree
+    -> Binary Search Tree
 ```
 
+Current implementations of algorithms include that of -
+
+``` 
+    -> Bubble sort
+    -> Heap sort
+    -> Quick sort
+    -> Merge sort
+    -> Insertion sort
+    -> Selection sort
+```
 
 There is a test directory which contains code for testing functionalities of all the defined data structures and algorithms.
 
 
-There are also some cpp files containing applications of various data structures.
+There is also a main.cpp file which can be used to use these defined headers.

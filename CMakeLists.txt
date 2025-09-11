@@ -10,7 +10,10 @@ add_executable(Data_Structure_and_Algorithm_main
 )
 add_executable(Data_Structure_and_Algorithm_test
         test/test.cpp
+        test/test_Heaps.cpp
         test/test_LinkedLists.cpp
+        test/test_Sorts.cpp
         test/test_Queues.cpp
         test/test_Stacks.cpp
+        test/test_Trees.cpp
 )
