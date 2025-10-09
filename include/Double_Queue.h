@@ -1,8 +1,82 @@
-//
-// Created by Lenovo on 9/11/2025.
-//
+#pragma once
+#include "Doubly_LinkedList.h"
+#include <stdexcept>
 
-#ifndef DOUBLE_QUEUE_H
-#define DOUBLE_QUEUE_H
+template<typename T>
+class Double_Queue {
+private:
+    Doubly_LinkedList<T> list;
 
-#endif //DOUBLE_QUEUE_H
+public:
+    Double_Queue();
+    void push_front(const T& data);
+    void push_back(const T& data);
+    T pop_front();
+    T pop_back();
+    T front();
+    T back();
+    bool isEmpty();
+    size_t getSize() {
+        return list.getSize();
+    }
+    void display();
+};
+
+template<typename T>
+Double_Queue<T>::Double_Queue() {}
+
+template<typename T>
+void Double_Queue<T>::push_front(const T& data) {
+    list.insert_begin(data);
+}
+
+template<typename T>
+void Double_Queue<T>::push_back(const T& data) {
+    list.insert_end(data);
+}
+
+template<typename T>
+T Double_Queue<T>::pop_front() {
+    if (isEmpty()) {
+        throw std::out_of_range("Deque is empty.");
+    }
+    T value = list.head->value;
+    list.delete_begin();
+    return value;
+}
+
+template<typename T>
+T Double_Queue<T>::pop_back() {
+    if (isEmpty()) {
+        throw std::out_of_range("Deque is empty.");
+    }
+    T value = list.findMax()->value; // In a deque, this is the last element
+    list.delete_end();
+    return value;
+}
+
+template<typename T>
+T Double_Queue<T>::front() {
+    if (isEmpty()) {
+        throw std::out_of_range("Deque is empty.");
+    }
+    return list.head->value;
+}
+
+template<typename T>
+T Double_Queue<T>::back() {
+    if (isEmpty()) {
+        throw std::out_of_range("Deque is empty.");
+    }
+    return list.findMax()->value; // In a deque, this is the last element
+}
+
+template<typename T>
+bool Double_Queue<T>::isEmpty() {
+    return list.isEmpty();
+}
+
+template<typename T>
+void Double_Queue<T>::display() {
+    list.display();
+}

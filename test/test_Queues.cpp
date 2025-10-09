@@ -2,6 +2,8 @@
 #include "Queue_LinkedList.h"
 #include "Queue_Array.h"
 #include "Queue_Stack.h"
+#include "Double_Queue.h"
+#include "Priority_Queue.h"
 
 using namespace std;
 
@@ -145,4 +147,101 @@ void test_StackQueue() {
     }
     cout << "Is queue empty after dequeuing all elements? " << (queue.isEmpty() ? "Yes" : "No") << endl;
     // queue.dequeue(); // This would throw an exception if uncommented
+}
+
+void test_DoubleQueue() {
+    pl("Testing functionalities of Double Ended Queue")
+
+    // create a new deque object containing data of int type
+    Double_Queue<int> dq;
+
+    pl("------------------------Checking push_front operation------------------------")
+    // push elements to the front
+    dq.push_front(10);
+    dq.push_front(20);
+    dq.push_front(30);
+
+    // print deque
+    dq.display();
+
+    pl("------------------------Checking push_back operation------------------------")
+    // push elements to the back
+    dq.push_back(40);
+    dq.push_back(50);
+
+    // print deque
+    dq.display();
+
+    pl("------------------------Checking pop_front operation------------------------")
+    // pop an element from the front
+    int front_element = dq.pop_front();
+    cout << "Popped from front: " << front_element << endl;
+
+    // print deque
+    dq.display();
+
+    pl("------------------------Checking pop_back operation------------------------")
+    // pop an element from the back
+    int back_element = dq.pop_back();
+    cout << "Popped from back: " << back_element << endl;
+
+    // print deque
+    dq.display();
+
+    pl("------------------------Checking front and back operations------------------------")
+    // peek at the front and back elements
+    cout << "Front element is: " << dq.front() << endl;
+    cout << "Back element is: " << dq.back() << endl;
+
+    // print deque
+    dq.display();
+
+    pl("------------------------Checking isEmpty and getSize------------------------")
+    // check if the deque is empty and get its size
+    cout << "Is deque empty? " << (dq.isEmpty() ? "Yes" : "No") << endl;
+    cout << "Size of deque: " << dq.getSize() << endl;
+
+    pl("------------------------Emptying the deque------------------------")
+    // Empty the deque
+    while (!dq.isEmpty()) {
+        dq.pop_front();
+    }
+    cout << "Is deque empty after popping all elements? " << (dq.isEmpty() ? "Yes" : "No") << endl;
+}
+
+void test_PriorityQueue() {
+    pl("Testing functionalities of Priority Queue")
+
+    // create a new priority queue object containing data of int type
+    Priority_Queue<int> pq;
+
+    pl("------------------------Checking push operation------------------------")
+    // push elements into the priority queue
+    pq.push(30);
+    pq.push(10);
+    pq.push(50);
+    pq.push(20);
+    pq.push(40);
+
+    pl("------------------------Checking getSize and isEmpty------------------------")
+    cout << "Size of priority queue: " << pq.getSize() << endl;
+    cout << "Is priority queue empty? " << (pq.isEmpty() ? "Yes" : "No") << endl;
+
+    pl("------------------------Checking top operation------------------------")
+    // view the top element
+    cout << "Top element is: " << pq.top() << endl;
+
+    pl("------------------------Checking pop operation------------------------")
+    // pop elements from the priority queue
+    cout << "Popped element: " << pq.pop() << endl;
+    cout << "Top element after pop: " << pq.top() << endl;
+    cout << "Popped element: " << pq.pop() << endl;
+    cout << "Top element after pop: " << pq.top() << endl;
+
+    pl("------------------------Emptying the priority queue------------------------")
+    // Empty the priority queue
+    while (!pq.isEmpty()) {
+        cout << "Popping: " << pq.pop() << endl;
+    }
+    cout << "Is priority queue empty after popping all elements? " << (pq.isEmpty() ? "Yes" : "No") << endl;
 }
