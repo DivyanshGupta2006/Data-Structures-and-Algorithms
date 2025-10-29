@@ -17,6 +17,9 @@ public:
     T peek();
     bool isEmpty();
     void display();
+    T getElementAt(const size_t index);
+    int search(const T &data) const;
+    void delete_element(const T &data);
 };
 
 template<typename T>
@@ -57,4 +60,19 @@ void Queue_LinkedList<T>::display() {
         return;
     }
     list.display();
+}
+
+template<typename T>
+T Queue_LinkedList<T>::getElementAt(const size_t index) {
+    return list.getElementAt(index);
+}
+
+template<typename T>
+int Queue_LinkedList<T>::search(const T &data) const {
+    return list.search(data);
+}
+
+template<typename T>
+void Queue_LinkedList<T>::delete_element(const T &data) {
+    list.delete_element(data);
 }
