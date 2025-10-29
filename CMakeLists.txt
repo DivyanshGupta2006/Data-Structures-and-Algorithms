@@ -12,7 +12,16 @@ add_executable(Data_Structure_and_Algorithm_main
 #        src/5.cpp
 #        src/6.cpp
         src/sort.cpp
-#        src/7.cpp
+        include/AVL_Tree.h
+        include/2_3_4_Tree.h
+        src/1.cpp
+        src/2.cpp
+        src/11.cpp
+        src/12.cpp
+        src/13.cpp
+        src/14.cpp
+        src/15.cpp
+        #        src/7.cpp
 #        src/8.cpp
 #        src/9.cpp
 #        src/10.cpp
