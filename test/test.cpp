@@ -22,8 +22,6 @@ void test_StackQueue();
 
 void test_QueueStack();
 
-void test_CircularQueue();
-
 void test_DoubleQueue();
 
 void test_PriorityQueue();
@@ -64,8 +62,6 @@ int main() {
     // test_QueueStack();
     // cout << "\n";
     // test_StackQueue();
-    // cout << "\n";
-    // test_CircularQueue();
     // cout << "\n";
     // test_DoubleQueue();
     // cout << "\n";

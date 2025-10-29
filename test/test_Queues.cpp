@@ -2,7 +2,6 @@
 #include "Queue_LinkedList.h"
 #include "Queue_Array.h"
 #include "Queue_Stack.h"
-#include "Circular_Queue.h"
 #include "Double_Queue.h"
 #include "Priority_Queue.h"
 
@@ -148,10 +147,6 @@ void test_StackQueue() {
     }
     cout << "Is queue empty after dequeuing all elements? " << (queue.isEmpty() ? "Yes" : "No") << endl;
     // queue.dequeue(); // This would throw an exception if uncommented
-}
-
-void test_CircularQueue() {
-    pl("Testing functionalities of Double Ended Queue")
 }
 
 void test_DoubleQueue() {

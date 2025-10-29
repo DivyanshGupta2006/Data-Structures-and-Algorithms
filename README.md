@@ -15,11 +15,12 @@ Current implementations of data structures include that of -
     -> Queue using LinkedList
     -> Stack using Queue
     -> Queue using Stack
-    -> Heap
     -> Doubly-ended Queue
     -> Priority Queue
-    -> Binary Tree
+    -> Heap
     -> Binary Search Tree
+    -> AVL Tree
+    -> 2-3-4 Tree
 ```
 
 Current implementations of algorithms include that of -
@@ -35,5 +36,6 @@ Current implementations of algorithms include that of -
 
 There is a test directory which contains code for testing functionalities of all the defined data structures and algorithms.
 
+The src folder contains solutions of some of the common questions involving these data structures as well as algorithms.
 
 There is also a main.cpp file which can be used to use these defined headers.
