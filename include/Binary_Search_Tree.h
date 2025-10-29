@@ -21,23 +21,23 @@ private:
             return new Node(data);
         }
         if (data < node->value) {
-            node->left = insert(node->left, data);
-        } else if (data > node->value) {
-            node->right = insert(node->right, data);
-        }
-        return node;
-    }
+             node->left = insert(node->left, data);
+         } else if (data > node->value) {
+             node->right = insert(node->right, data);
+         }
+         return node;
+     }
 
-    Node* remove(Node *node, const T &data) {
-        if (node == nullptr) {
-            return node;
-        }
-        if (data < node->value) {
-            node->left = remove(node->left, data);
-        } else if (data > node->value) {
-            node->right = remove(node->right, data);
-        } else {
-            if (node->left == nullptr) {
+     Node* remove(Node *node, const T &data) {
+         if (node == nullptr) {
+             return node;
+         }
+         if (data < node->value) {
+             node->left = remove(node->left, data);
+         } else if (data > node->value) {
+             node->right = remove(node->right, data);
+         } else {
+             if (node->left == nullptr) {
                 Node *temp = node->right;
                 delete node;
                 return temp;
@@ -179,19 +179,19 @@ private:
         return countLeavesUtil(node->left) + countLeavesUtil(node->right);
     }
 
-    int diameterUtil(Node* node, int& height) const {
-        if (node == nullptr) {
-            height = -1;
-            return 0;
-        }
-        int leftHeight = 0, rightHeight = 0;
-        int leftDiameter = diameterUtil(node->left, leftHeight);
-        int rightDiameter = diameterUtil(node->right, rightHeight);
-
-        height = std::max(leftHeight, rightHeight) + 1;
-
-        return std::max({leftDiameter, rightDiameter, (leftHeight + rightHeight + 2)});
-    }
+    // int diameterUtil(Node* node, int& height) const {
+    //     if (node == nullptr) {
+    //         height = -1;
+    //         return 0;
+    //     }
+    //     int leftHeight = 0, rightHeight = 0;
+    //     int leftDiameter = diameterUtil(node->left, leftHeight);
+    //     int rightDiameter = diameterUtil(node->right, rightHeight);
+    //
+    //     height = std::max(leftHeight, rightHeight) + 1;
+    //
+    //     return std::max({leftDiameter, rightDiameter, (leftHeight + rightHeight + 2)});
+    // }
     //
     // void serializeUtil(Node* node, std::stringstream& ss) const {
     //     if (node == nullptr) {
@@ -355,7 +355,7 @@ public:
         }
         Queue_LinkedList<Node*> q;
         q.enqueue(root);
-        while (!q.empty()) {
+        while (!q.isEmpty()) {
             Node *current = q.peek();
             q.dequeue();
             std::cout << current->value << " ";

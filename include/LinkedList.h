@@ -81,6 +81,8 @@ public:
     void merge(const LinkedList<T> &list);
 
     void reverse();
+
+    T getValue(int i) const;
 };
 
 // defining the destructor
@@ -359,6 +361,17 @@ typename LinkedList<T>::Node *LinkedList<T>::merge_sorted(Node *a, Node *b) {
         result->next = merge_sorted(a, b->next);
     }
     return result;
+}
+
+template<typename T>
+T LinkedList<T>::getValue(int i) const {
+    int index = 0;
+    Node *current = head;
+    while (current->next != nullptr && index < i) {
+        current = current->next;
+        index++;
+    }
+    return current->value;
 }
 
 template<typename T>

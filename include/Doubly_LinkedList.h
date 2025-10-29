@@ -72,6 +72,8 @@ public:
     void merge(const Doubly_LinkedList<T> &list);
 
     void reverse();
+
+    T getValue(int i) const;
 };
 
 template<typename T>
@@ -234,6 +236,17 @@ void Doubly_LinkedList<T>::delete_end() {
         delete current;
         size--;
     }
+}
+
+template<typename T>
+T Doubly_LinkedList<T>::getValue(int i) const {
+    int index = 0;
+    Node *current = head;
+    while (current->next != nullptr && index < i) {
+        current = current->next;
+        index++;
+    }
+    return current->value;
 }
 
 template<typename T>

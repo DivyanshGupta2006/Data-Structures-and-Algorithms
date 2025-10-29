@@ -50,7 +50,7 @@ T Double_Queue<T>::pop_back() {
     if (isEmpty()) {
         throw std::out_of_range("Deque is empty.");
     }
-    T value = list.findMax()->value; // In a deque, this is the last element
+    T value = list.getValue(list.getSize() - 1); // In a deque, this is the last element
     list.delete_end();
     return value;
 }
@@ -68,7 +68,7 @@ T Double_Queue<T>::back() {
     if (isEmpty()) {
         throw std::out_of_range("Deque is empty.");
     }
-    return list.findMax()->value; // In a deque, this is the last element
+    return list.getValue(list.getSize() - 1); // In a deque, this is the last element
 }
 
 template<typename T>
