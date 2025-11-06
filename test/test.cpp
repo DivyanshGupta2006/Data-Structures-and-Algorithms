@@ -75,8 +75,8 @@ int main() {
     // cout << "\n";
     // test_AVLTree();
     // cout << "\n";
-    // test_234Tree();
-    // cout << "\n";
+    test_234Tree();
+    cout << "\n";
     // test_Heap();
     // cout << "\n";
     // test_BubbleSort();

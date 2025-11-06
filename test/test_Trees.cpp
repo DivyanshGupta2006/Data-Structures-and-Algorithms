@@ -135,49 +135,73 @@ void test_AVLTree() {
 }
 
 void test_234Tree() {
-        Tree_2_3_4 tree;
-        std::string command;
+    Tree_2_3_4 tree;
+    std::string command;
+    std::string line;
 
-        // Read commands from standard input until EOF
-        while (std::cin >> command) {
-            if (command == "INSERT") {
-                int x;
-                std::cin >> x;
-                tree.INSERT(x);
-            } else if (command == "DELETE") {
-                int x;
-                std::cin >> x;
-                tree.DELETE(x);
-            } else if (command == "FIND") {
-                int x;
-                std::cin >> x;
-                tree.FIND(x);
-            } else if (command == "PRINT") {
-                std::string type;
-                std::cin >> type;
-                tree.PRINT(type);
-            } else if (command == "BULK") {
-                int n;
-                std::cin >> n;
-                if (n > 0) {
-                    int* arr = new int[n];
-                    for(int i = 0; i < n; ++i) {
-                        std::cin >> arr[i];
-                    }
-                    tree.BULK(arr, n);
-                    delete[] arr;
-                } else {
-                    // Handle n=0 case, e.g., clear the tree
-                    int* arr = nullptr;
-                    tree.BULK(arr, 0);
+    // Read commands from standard input until EOF
+    while (std::cin >> command) {
+
+        // --- Q4 Commands ---
+        if (command == "PUT") {
+            int key, val;
+            std::cin >> key >> val;
+            tree.PUT(key, val);
+        } else if (command == "GET") {
+            int key;
+            std::cin >> key;
+            tree.GET(key);
+        } else if (command == "RANGE") {
+            int L, R;
+            std::cin >> L >> R;
+            tree.RANGE(L, R);
+        } else if (command == "BATCH_DELETE") {
+            int m;
+            std::cin >> m;
+            if (m > 0) {
+                int* keys = new int[m];
+                for (int i = 0; i < m; ++i) {
+                    std::cin >> keys[i];
                 }
-            } else {
-                // To clear the rest of the line for an unknown command
-                std::string s;
-                std::getline(std::cin, s);
+                tree.BATCH_DELETE(m, keys);
+                delete[] keys;
             }
         }
 
-        return 0;
+        // --- Q2 Commands ---
+        else if (command == "INSERT") {
+            int x;
+            std::cin >> x;
+            tree.INSERT(x);
+        } else if (command == "DELETE") {
+            int x;
+            std::cin >> x;
+            tree.DELETE(x);
+        } else if (command == "FIND") {
+            int x;
+            std::cin >> x;
+            tree.FIND(x);
+        } else if (command == "PRINT") {
+            std::string type;
+            std::cin >> type;
+            tree.PRINT(type);
+        } else if (command == "BULK") {
+            int n;
+            std::cin >> n;
+            if (n > 0) {
+                int* arr = new int[n];
+                for(int i = 0; i < n; ++i) {
+                    std::cin >> arr[i];
+                }
+                tree.BULK(arr, n); // Note: BULK was not in the final Q4 .h file
+                delete[] arr;
+            }
+        }
+
+        // --- Unknown Command Handling ---
+        else {
+            // Read and discard the rest of the unknown command line
+            std::getline(std::cin, line);
+        }
     }
 }
