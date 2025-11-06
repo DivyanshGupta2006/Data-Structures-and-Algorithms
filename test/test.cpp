@@ -28,6 +28,10 @@ void test_PriorityQueue();
 
 void test_BinarySearchTree();
 
+void test_AVLTree();
+
+void test_234Tree();
+
 void test_Heap();
 
 void test_BubbleSort();
@@ -63,11 +67,15 @@ int main() {
     // cout << "\n";
     // test_StackQueue();
     // cout << "\n";
-    test_DoubleQueue();
-    cout << "\n";
+    // test_DoubleQueue();
+    // cout << "\n";
     // test_PriorityQueue();
     // cout << "\n";
     // test_BinarySearchTree();
+    // cout << "\n";
+    // test_AVLTree();
+    // cout << "\n";
+    // test_234Tree();
     // cout << "\n";
     // test_Heap();
     // cout << "\n";
