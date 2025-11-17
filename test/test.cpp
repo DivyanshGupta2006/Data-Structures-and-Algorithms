@@ -46,6 +46,12 @@ void test_MergeSort();
 
 void test_HeapSort();
 
+void test_Weighted_Graph();
+
+void test_Directed_Acyclic_Graph();
+
+void test_Directed_Cyclic_Graph();
+
 int main() {
     // test_LinkedList();
     // cout << "\n";
@@ -75,8 +81,8 @@ int main() {
     // cout << "\n";
     // test_AVLTree();
     // cout << "\n";
-    test_234Tree();
-    cout << "\n";
+    // test_234Tree();
+    // cout << "\n";
     // test_Heap();
     // cout << "\n";
     // test_BubbleSort();
@@ -90,6 +96,12 @@ int main() {
     // test_MergeSort();
     // cout << "\n";
     // test_HeapSort();
+    // cout << "\n";
+    test_Weighted_Graph();
+    cout << "\n";
+    // test_Directed_Acyclic_Graph();
+    // cout << "\n";
+    // test_Directed_Cyclic_Graph();
     // cout << "\n";
 
     return 0;
