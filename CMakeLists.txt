@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 add_executable(Data_Structure_and_Algorithm_main
-        main.cpp
+#        main.cpp
+        src/expression_conversion.cpp
 #        src/3.cpp
 #        src/4.cpp
 #        src/5.cpp
@@ -32,4 +33,5 @@ add_executable(Data_Structure_and_Algorithm_test
         test/test_Queues.cpp
         test/test_Stacks.cpp
         test/test_Trees.cpp
+        test/test_Graphs.cpp
 )
